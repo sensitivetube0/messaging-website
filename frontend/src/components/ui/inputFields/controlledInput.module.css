@@ -1,0 +1,4 @@
+.input {
+  height: 3rem;
+  width: max(9rem, 50vw);
+}

@@ -1,0 +1,22 @@
+.input {
+  color: #000;
+  height: 3rem;
+  font-family: var(--grift-black);
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--primary-color-600, #1c2e61);
+  background: var(--UI-INTERFACE, #fbfbfb);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  justify-self: center;
+  margin-top: 3rem;
+  gap: 0.5rem;
+}
+.label {
+  color: #000;
+  font-family: var(--grift-black);
+  font-size: 1.5rem;
+}

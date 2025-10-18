@@ -1,0 +1,18 @@
+.container {
+  align-self: center;
+  justify-self: center;
+  color: #000;
+
+  font-family: var(--grift-black);
+  font-size: 1.5rem;
+}
+
+.inputs {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.button {
+  align-self: center;
+}

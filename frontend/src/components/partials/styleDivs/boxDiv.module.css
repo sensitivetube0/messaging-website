@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--primary-color-400, #455789);
+  gap: 16rem;
+}
+
+.content {
+}

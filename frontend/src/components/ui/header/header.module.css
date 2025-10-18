@@ -1,0 +1,8 @@
+.container {
+  padding: 1.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: var(--primary-color-200, #8c97b6);
+  gap: 1rem;
+}

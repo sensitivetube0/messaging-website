@@ -1,0 +1,14 @@
+.container {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  justify-self: center;
+  margin: 10rem;
+  gap: 2rem;
+  padding: 3.7rem 2.25rem;
+  border-radius: 1rem;
+  background: var(--primary-color-200, #8c97b6);
+}

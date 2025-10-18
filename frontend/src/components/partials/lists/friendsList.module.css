@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--primary-color-400, #455789);
+  background: var(--secondary-color-100, #e5b6da);
+}

@@ -1,0 +1,16 @@
+.inputCon {
+  padding: 1.5rem;
+  display: flex;
+  gap: 0.4rem;
+}
+.buttonCon {
+  margin-left: auto;
+}
+@media (max-width: 800px) {
+  .inputCon {
+    padding: 0.3rem;
+  }
+}
+.friends {
+  margin-top: 2rem;
+}

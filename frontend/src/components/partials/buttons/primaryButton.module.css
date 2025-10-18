@@ -1,0 +1,7 @@
+.button {
+  border: 3px solid var(--accent-color-900, #162952);
+  background: var(--primary-color-50, #c1c7d8);
+  box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 0.9rem 3.75rem;
+  font-family: var(--grift-black);
+}

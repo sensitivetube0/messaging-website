@@ -1,0 +1,10 @@
+.textBox {
+  color: #000;
+  text-align: center;
+
+  font-family: var(--grift-black);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}

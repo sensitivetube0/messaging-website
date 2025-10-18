@@ -1,0 +1,9 @@
+.div {
+  border: 2px solid var(--primary-color-400, #455789);
+  background: var(--UI-INTERFACE, #fbfbfb);
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}

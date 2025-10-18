@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  margin-top: auto;
+  background: var(--UI-INTERFACE, #fbfbfb);
+  box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.25);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 1.25rem 1.5rem;
+  /* GRIFT -MAIN */
+  font-family: var(--grift-black);
+  font-size: 0.75rem;
+}
+.icon {
+  display: flex;
+  width: 2.125rem;
+  height: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
