@@ -1,0 +1,132 @@
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{
+    "email":"bobsmith@email.com",
+    "username":"bobsmith",
+    "password":"blah12345"
+}
+
+
+###
+
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{
+    "email":"bob@email.com",
+    "username":"bobbys",
+    "password":"blah12345"
+}
+
+
+###
+//valid
+POST http://localhost:4000/refresh
+cookie:
+###
+
+//bobsmith
+POST http://localhost:4000/refresh
+Cookie:refreshToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhjMzI0ZGMyLTMyMDYtNDBjNy1hZDM5LWI5YWJiNmM0ZTg2ZSIsInVzZXJuYW1lIjoiYm9ic21pdGgiLCJlbWFpbCI6ImJvYnNtaXRoQGVtYWlsLmNvbSIsImlhdCI6MTc2MTM5MzE0NSwiZXhwIjoxNzYzOTg1MTQ1fQ.lv8oDOUcLR168KaLxcS1tALPM6K0DtVXpUJjYiCvWzE.8iGKr4D919qMxpDnKaMw28LsNC9IeWr0xAC3j2Xc6LI
+
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email":"jessecollins0808@gmail.com",
+    "password":"JesseC123"
+}
+
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email":"bobsmith@email.com",
+    "password":"blah12345"
+}
+###
+POST http://localhost:4000/logout
+Cookie:
+###
+
+PUT http://localhost:4000/reset/password
+cookie:
+Content-Type: application/json
+
+{
+    "email" :"bobsmithsssssssss@email.com",
+    "currentPassword":"Buster123",
+    "newPassword":"Buster123"
+}
+
+###
+
+PUT http://localhost:4000/reset/username
+cookie:
+Content-Type:application/json
+
+{
+    "newUsername":"bobsmith",
+    "password":"Buster123"
+}
+
+
+
+###
+GET http://localhost:3000/friends
+Cookie:accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFjOTViYTBmLTYyZWYtNDI1Zi1hMTBmLTg1ZDEzN2FiMTc3NCIsInVzZXJuYW1lIjoiU2Vuc2l0aXZldHViZSIsImVtYWlsIjoiamVzc2Vjb2xsaW5zMDgwOEBnbWFpbC5jb20iLCJpYXQiOjE3NjEyNTY1MDQsImV4cCI6MTc2MTI1NzQwNH0.iyacnk-cAPsXiu4uhzyRqIeMUwVcBOls7bCiC5-smZI.SN7RI%2FcD%2F402qx3gb5StiYZ1ymlAM0%2BjPuxwJLVER5I
+###
+
+
+POST http://localhost:3000/friends
+Cookie:
+Content-Type:application/json
+
+{
+    "friendsUsername":"bobsmith"
+}
+
+
+
+###
+
+POST http://localhost:3000/messages
+Cookie:
+Content-Type:application/json
+
+{
+    "toUsername":"bobsmith",
+    "message":"Fuck you bobby"
+}
+
+###
+
+GET http://localhost:3000/messages
+Cookie:
+
+
+###
+
+GET http://localhost:3000/messages/4
+Cookie:accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA4NWJkNzExLWZiYjEtNDQ3NC05YzQ0LTA2ZDUwNTI0MmU3NSIsInVzZXJuYW1lIjoiYm9iYnkiLCJlbWFpbCI6ImJvYmJ5QGVtYWlsLmNvbSIsImlhdCI6MTc2MTIxOTUwMywiZXhwIjoxNzYxMjIwNDAzfQ.OVvVP1_IadHrVos9Pj0z1aXy5qp-cM6QWfjqJyzW_g8.114TUL0SjEcBgOKCvzCUGq854DO17G3Nhabp9FpEqsQ;
+
+###
+
+GET http://localhost:3000/messages/auth/6
+Cookie: 
+Content-Type:application/json
+
+###
+
+DELETE http://localhost:3000/messages
+cookie:
+Content-Type:application/json
+
+{
+    "id":8
+}

@@ -6,7 +6,7 @@ export default function DropDownMenu({ name, label, options }) {
       <label htmlFor={name}>{label}</label>
       <select name={name} id={name}>
         {options.map((o) => {
-          return <option>{o}</option>;
+          return <option key={o}>{o}</option>;
         })}
       </select>
     </div>

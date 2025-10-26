@@ -1,4 +1,19 @@
+import Header from "../../ui/header/header";
+import OpenMessageBody from "../../ui/bodys/bodyForOpenMessage/openMessageBody";
+import styles from "./openMessage.module.css";
+import { useLoaderData } from "react-router";
 export default function OpenMessage() {
-  //have to do more work than just make sure user logged in for this page also make sure message is acc to user
-  return <div className="">hello there</div>;
+  const loaderData = useLoaderData();
+  const messageInfo = loaderData.messageToUser;
+
+  return (
+    <div className={styles.container}>
+      <Header />
+      <OpenMessageBody
+        from={`FROM: ${messageInfo.from.username}`}
+        message={messageInfo.message}
+        messageId={messageInfo.id}
+      />
+    </div>
+  );
 }

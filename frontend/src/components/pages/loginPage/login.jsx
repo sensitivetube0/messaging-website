@@ -2,13 +2,12 @@ import InputField from "../../ui/inputFields/inputField";
 import Header from "../../ui/header/header";
 import Button from "../../partials/buttons/priamryButton";
 import LinkText from "../../partials/textBox/linkText";
-import { useNavigate } from "react-router";
+import { Form, useActionData, useNavigation } from "react-router";
+
 export default function Login() {
-  const navigate = useNavigate();
-  function handleSubmit(e) {
-    e.preventDefault();
-    return navigate("/home");
-  }
+  const actionData = useActionData();
+  const navigation = useNavigation();
+
   const params = [
     {
       field: "email",
@@ -26,12 +25,12 @@ export default function Login() {
       type: "password",
     },
   ];
-  //wrap inputField and button in a Form and make loggs user and uses actionData and useNavigation  change form to a Form and use action
+
   return (
     <>
       <Header />
 
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <Form method="POST">
         {params.map((param, index) => (
           <InputField
             key={index}
@@ -42,9 +41,19 @@ export default function Login() {
           />
         ))}
         <div style={{ justifySelf: "center", marginTop: "5rem" }}>
-          <Button content={"LOGIN"} type={"submit"} />
+          <Button
+            content={"LOGIN"}
+            type={"submit"}
+            disabled={navigation.state === "submitting"}
+          />
         </div>
-      </form>
+        <div style={{ justifySelf: "center", marginTop: "2vh" }}>
+          {actionData?.errors?.map((err) => (
+            <div key={err.msg}>{err.msg}</div>
+          ))}
+          {actionData?.message}
+        </div>
+      </Form>
       <div style={{ justifySelf: "center", marginTop: "3rem" }}>
         Don't have an account <LinkText path="/signup" content={"Signup"} />
       </div>

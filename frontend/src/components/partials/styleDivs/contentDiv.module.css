@@ -1,0 +1,7 @@
+.content {
+  background: var(--UI-INTERFACE, #fbfbfb);
+  line-break: anywhere;
+  padding: 2rem;
+  border: 0.2rem ridge var(--primary-color-500, #213773);
+  border-radius: 10px;
+}

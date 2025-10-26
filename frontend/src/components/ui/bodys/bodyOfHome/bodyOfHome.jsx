@@ -1,9 +1,9 @@
 import styles from "./bodyOfHome.module.css";
 
-export default function BodyHome() {
+export default function BodyHome({ content }) {
   return (
     <div className={styles.container}>
-      <div className={styles.text}>WELCOME ACCOUNT NAME </div>
+      <div className={styles.text}>{content}</div>
     </div>
   );
 }

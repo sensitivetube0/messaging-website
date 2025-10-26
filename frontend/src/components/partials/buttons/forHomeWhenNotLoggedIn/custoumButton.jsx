@@ -1,4 +1,4 @@
-import styles from "./custtoumButton.module.css";
+import styles from "./custoumButton.module.css";
 
 export default function ButtonForNotLogged({ content, onClickFn }) {
   return (

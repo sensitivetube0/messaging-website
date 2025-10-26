@@ -2,30 +2,50 @@ import styles from "./bodyForSend.module.css";
 import TextArea from "../../inputFields/textArea";
 import DropDownMenu from "../../inputFields/dropDownSelect";
 import Button from "../../../partials/buttons/priamryButton";
-import { useNavigate } from "react-router";
+import { Form, useNavigation, useActionData } from "react-router";
+import { useQuery } from "@tanstack/react-query";
+import { getFriends } from "../../../../../apiCalls";
 export default function BodySend() {
-  const navigate = useNavigate();
-  function handleSubmit() {
-    return navigate("/home");
+  const actionData = useActionData();
+  const navigation = useNavigation();
+  const friendsQuery = useQuery({
+    staleTime: 5 * 60 * 1000,
+    queryFn: async () => {
+      const friends = await getFriends();
+      return friends;
+    },
+    queryKey: ["send"],
+  });
+
+  if (friendsQuery.isLoading) {
+    return <div className="">Loading. . .</div>;
   }
-  //make form element a Form and post a message in the action
-  //make it so it fetches all friends by usin the user LoaderData in a useQuery
-  const options = ["friend1", "friend2", "friend3"];
+  if (friendsQuery.isError || friendsQuery.status === "error") {
+    return <div className="">ERROR PAGE</div>;
+  }
+
+  const friends = friendsQuery.data.friends;
+
   return (
     <div className={styles.container}>
-      <form action="" onSubmit={() => handleSubmit()} className={styles.inputs}>
-        <DropDownMenu name={"to"} label={"To"} options={options} />
+      <Form method="POST" className={styles.inputs}>
+        <DropDownMenu name={"toUsername"} label={"To"} options={friends} />
 
         <TextArea
           label={"Message"}
           cols={"40"}
           rows={"20"}
-          name={"messages"}
+          name={"message"}
         ></TextArea>
         <div className={styles.button}>
-          <Button content={"SEND MESSAGE"} type={"submit"} />
+          <Button
+            content={"SEND MESSAGE"}
+            type={"submit"}
+            disabled={navigation.state === "submitting"}
+          />
         </div>
-      </form>
+        <div className={styles.error}>{actionData?.message}</div>
+      </Form>
     </div>
   );
 }

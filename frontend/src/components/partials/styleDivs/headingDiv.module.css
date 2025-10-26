@@ -1,0 +1,10 @@
+.heading {
+  border-radius: 0.875rem;
+  background: var(--secondary-color-50, #ebc6e2);
+  display: flex;
+  width: 10rem;
+  height: 4rem;
+  padding: 0 4.375rem 0 4.4375rem;
+  justify-content: center;
+  align-items: center;
+}

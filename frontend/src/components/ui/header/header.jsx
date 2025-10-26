@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className={styles.container}>
       <Logo />
-      <TextBox content={"INSTANT MESSANGER"} />
+      <TextBox content={"INSTANT MESSENGER"} />
     </div>
   );
 }

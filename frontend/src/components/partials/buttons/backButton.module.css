@@ -1,0 +1,6 @@
+.backButton {
+  padding: 1.4rem;
+  border-radius: 0.3125rem;
+  border: 2.5px solid var(--primary-color-700, #16254e);
+  background: var(--UI-INTERFACE, #fbfbfb);
+}

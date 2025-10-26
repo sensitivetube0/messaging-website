@@ -1,0 +1,8 @@
+.button {
+  padding: 0.75rem;
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  border: 1px solid #000;
+  background: var(--accent-color-50, #c9d8f7);
+}

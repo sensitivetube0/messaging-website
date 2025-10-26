@@ -4,17 +4,34 @@ import FriendsList from "../../../partials/lists/friendsList";
 import Button from "../../../partials/buttons/priamryButton";
 import styles from "./bodyForFriend.module.css";
 import { useNavigate } from "react-router";
-export default function BodyForAddFriend() {
+import { useQuery } from "@tanstack/react-query";
+import { getFriends } from "../../../../../apiCalls.js";
+
+export default function BodyForAddFriend({ username }) {
   const navigate = useNavigate();
   function handleClick() {
     return navigate("/addfriend");
   }
   const [search, setSearch] = useState("");
 
-  const friends = ["username1", "username2", "username3"];
-  //would do a react query here to get the friends for of the user to display useQuery also when search change would dynamically rerun use querywith the search so the friends list keeps updating would even have to handle a submit this just keeps rerending on search change! example this works
+  const queryData = useQuery({
+    queryKey: ["friends"],
+    queryFn: async () => {
+      const friends = await getFriends();
+      return friends;
+    },
+    staleTime: 5 * 60 * 1000,
+  });
+  if (queryData.isLoading) return <div className="">Loading..</div>;
+  if (queryData.status === "error" || queryData.isError)
+    return <div className="">ERROR PAGE</div>;
+
+  const friends = queryData.data.friends;
+
   const searchFriends = friends.filter(
-    (f) => f.startsWith(search) || f === search
+    (f) =>
+      f.toLowerCase().startsWith(search.toLowerCase()) ||
+      f.toLowerCase() === search.toLowerCase()
   );
   return (
     <>
